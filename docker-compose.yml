@@ -1,0 +1,9 @@
+services:
+  human-atlas:
+    build: .
+    image: human-atlas
+    container_name: human-atlas
+    restart: unless-stopped
+    ports:
+      # WHY: docker0 gateway only. The Caddy edge proxy (~/edge on the VPS) serves veit.giorno.cloud here; nothing is internet-facing.
+      - "172.17.0.1:8792:80"
