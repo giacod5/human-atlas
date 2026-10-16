@@ -5,7 +5,6 @@ services:
     container_name: human-atlas
     restart: unless-stopped
     mem_limit: 128m   # WHY: caps a runaway so it cannot starve the box (no swap); ~5x+ measured peak (finer-vps)
-    mem_limit: 128m   # WHY: caps a runaway so it cannot starve the box (no swap); ~5x+ measured peak (finer-vps)
     ports:
       # WHY: docker0 gateway only. The Caddy edge proxy (~/edge on the VPS) serves atlas.davidegiacomel.space here; nothing is internet-facing.
       - "172.17.0.1:8792:80"
